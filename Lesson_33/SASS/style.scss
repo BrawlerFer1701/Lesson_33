@@ -1,0 +1,51 @@
+#menu{
+	background: green;
+	ul{
+		width: 200px;
+		height: 100px;
+		li{
+			padding: 10px;
+			background: red;
+			font-size: 24px;
+			&:hover{
+				background: yellow;
+			}
+		}
+	}
+}
+
+$color: seagreen;
+body{
+	background: $color;
+}
+h2{
+	color: $color;
+}
+
+//Mixin # function
+@mixin tenham{
+	padding: 10px;
+	background: red;
+	color: white;
+	font-size: 20px;
+}
+
+#box1{
+	@include tenham;
+}
+.box2{
+	@include tenham;
+}
+
+@mixin tenham2($padding1, $bg){
+	padding: $padding1;
+	background: $bg;
+	color: white;
+	font-size: 20px;
+}
+.box3{
+	@include tenham2(20px, yellowgreen);
+}
+#box4{
+	@include tenham2(30px 50px, #c1c1c1);
+}
